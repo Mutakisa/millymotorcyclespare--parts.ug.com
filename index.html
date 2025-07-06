@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MILLY MOTORCYCLE SPARE PARTS | Quality Imported Parts in Kampala</title>
+    <style>
+        :root {
+            --primary-color: #FF4500; /* Vibrant orange-red */
+            --secondary-color: #FFD700; /* Gold */
+            --dark-color: #1A1A1A;
+            --light-color: #F8F8F8;
+            --accent-color: #E63946;
+            --background-gradient: linear-gradient(135deg, #FF7E00 0%, #FFD700 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-color);
+            color: var(--dark-color);
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        header {
+            background: var(--background-gradient);
+            color: white;
+            padding: 1.5rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 L0,100 Z" fill="none" stroke="white" stroke-width="0.5" stroke-dasharray="5,5" opacity="0.2"/></svg>');
+            opacity: 0.1;
+        }
+
+        .logo {
+            font-size: 2.8rem;
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            letter-spacing: 1px;
+        }
+
+        .tagline {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 400;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        nav {
+            background-color: var(--dark-color);
+            padding: 0.8rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin: 0 1.2rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+        }
+
+        nav ul li a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            height: 70vh;
+            background: 
+                linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1580310614655-94b6a56a6bc0?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            color: white;
+            max-width: 800px;
+            padding: 2rem;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2.5rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 2.2rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            flex: 1;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            display: inline-block;
+            padding-bottom: 0.5rem;
+            position: relative;
+        }
+
+        .section-title h2::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 5px;
+            background-color: var(--secondary-color);
+            border-radius: 3px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        .product-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .product-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+
+        .product-info {
+            padding: 1.8rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+            color: var(--dark-color);
+        }
+
+        .product-price {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 1.2rem;
+        }
+
+        .product-description {
+            color: #666;
+            margin-bottom: 1.8rem;
+            font-size: 1rem;
+            line-height: 1.5;
+            flex: 1;
+        }
+
+        .buy-btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background-color: var(--dark-color);
+            color: white;
+            padding: 0.9rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-size: 1.1rem;
+            margin-top: auto;
+        }
+
+        .buy-btn:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+
+        .admin-panel {
+            background-color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            margin-top: 3rem;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .admin-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: var(--dark-color);
+            font-size: 1.1rem;
+        }
+
+        .form-group input, 
+        .form-group textarea {
+            padding: 1rem;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: border 0.3s ease;
+        }
+
+        .form-group input:focus, 
+        .form-group textarea:focus {
+            border-color: var(--primary-color);
+            outline: none;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .admin-btn {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 1.1rem;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .admin-btn:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-2px);
+        }
+
+        .login-form {
+            max-width: 500px;
+            margin: 5rem auto;
+            background-color: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-form h2 {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: var(--primary-color);
+            font-size: 2.2rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-content p {
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .contacts {
+            margin-top: 3rem;
+            background-color: #f5f5f5;
+            padding: 4rem 0;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .contact-info p {
+            font-size: 1.2rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.3rem;
+            transition: all 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+
+        .page {
+            display: none;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        .logout-btn {
+            background-color: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-left: 1rem;
+        }
+
+        .logout-btn:hover {
+            background-color: #c1121f;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.2rem;
+            }
+            
+            .tagline {
+                font-size: 1.1rem;
+            }
+            
+            nav ul li {
+                margin: 0.5rem 0.8rem;
+            }
+            
+            nav ul li a {
+                font-size: 1rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                padding: 0.8rem 1.8rem;
+                font-size: 1rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-panel, .login-form {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.8rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .section-title h2::after {
+                width: 70px;
+                height: 4px;
+            }
+            
+            .product-name {
+                font-size: 1.2rem;
+            }
+            
+            .product-price {
+                font-size: 1.3rem;
+            }
+            
+            .login-form, .admin-panel {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">MILLY MOTORCYCLE SPARE PARTS</div>
+        <div class="tagline">Quality Imported Motorcycle Parts in Kampala</div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" data-page="home">Home</a></li>
+            <li><a href="#" data-page="products">Products</a></li>
+            <li><a href="#" data-page="contacts">Contacts</a></li>
+            <li><a href="#" data-page="admin-login" id="admin-link">Admin</a></li>
+            <li class="hidden" id="logout-li"><button class="logout-btn" id="logout-btn">Logout</button></li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Home Page -->
+        <section class="page active" id="home-page">
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Premium Motorcycle Spare Parts</h1>
+                    <p>We import and supply high-quality Bajaj and other motorcycle spare parts directly to Kampala at competitive prices.</p>
+                    <a href="#" data-page="products" class="btn">View Products</a>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="section-title">
+                    <h2>Why Choose Us?</h2>
+                </div>
+                <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                    <p style="font-size: 1.2rem; margin-bottom: 2rem;">
+                        Milly Motorcycle Spare Parts is your trusted source for genuine imported motorcycle parts in Kampala. 
+                        We specialize in Bajaj parts but also carry a wide range of components for other popular motorcycle brands.
+                    </p>
+                    <a href="#" data-page="products" class="btn">Browse Our Products</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Products Page -->
+        <section class="page" id="products-page">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Our Products</h2>
+                </div>
+                <div class="products-grid" id="products-container">
+                    <!-- Products will be dynamically added here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Contacts Page -->
+        <section class="page" id="contacts-page">
+            <div class="contacts">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>Contact Us</h2>
+                    </div>
+                    <div class="contact-info">
+                        <p>Call us for orders and deliveries:</p>
+                        <p>
+                            <a href="tel:0703109395">0703109395</a> or 
+                            <a href="tel:0773730371">0773730371</a>
+                        </p>
+                        <p>Email us at:</p>
+                        <p><a href="mailto:mutakisachrispus424@gmail.com">mutakisachrispus424@gmail.com</a></p>
+                        <p style="margin-top: 2rem;">Visit us in Kampala for the best deals on quality motorcycle parts!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Login Page -->
+        <section class="page" id="admin-login-page">
+            <div class="container">
+                <div class="login-form">
+                    <h2>Admin Login</h2>
+                    <div class="form-group">
+                        <label for="admin-password">Password</label>
+                        <input type="password" id="admin-password" placeholder="Enter admin password">
+                    </div>
+                    <button class="admin-btn" id="login-btn">Login</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Admin Panel Page -->
+        <section class="page" id="admin-panel-page">
+            <div class="container">
+                <div class="section-title">
+                    <h2>Admin Panel</h2>
+                </div>
+                <div class="admin-panel">
+                    <form class="admin-form" id="product-form">
+                        <div class="form-group">
+                            <label for="product-name">Product Name</label>
+                            <input type="text" id="product-name" placeholder="Enter product name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-price">Price (UGX)</label>
+                            <input type="number" id="product-price" placeholder="Enter product price" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-description">Description</label>
+                            <textarea id="product-description" placeholder="Enter product description"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="product-image">Product Image URL</label>
+                            <input type="text" id="product-image" placeholder="Enter image URL" required>
+                            <small>Tip: Upload your image to a service like Imgur and paste the URL here</small>
+                        </div>
+                        <button type="submit" class="admin-btn">Add Product</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p><strong>MILLY MOTORCYCLE SPARE PARTS</strong></p>
+            <p>Quality Imported Motorcycle Parts in Kampala</p>
+            <p>Contacts: <strong>0703109395</strong> or <strong>0773730371</strong></p>
+            <p>Email: <strong>mutakisachrispus424@gmail.com</strong></p>
+            <p style="margin-top: 1rem;">© 2023 All Rights Reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample products data (will be loaded from localStorage)
+        let products = JSON.parse(localStorage.getItem('milly-products')) || [
+            {
+                id: 1,
+                name: "Bajaj Piston Kit",
+                price: 150000,
+                description: "High-quality piston kit for Bajaj motorcycles",
+                image: "https://images.unsplash.com/photo-1597852074816-d933c7d2b988?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 2,
+                name: "Motorcycle Chain Set",
+                price: 90000,
+                description: "Durable chain set for various motorcycle models",
+                image: "https://images.unsplash.com/photo-1601758003122-53c40e686a19?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 3,
+                name: "Brake Pads Set",
+                price: 75000,
+                description: "Premium brake pads for improved stopping power",
+                image: "https://images.unsplash.com/photo-1558980394-4c7c9299fe96?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80"
+            },
+            {
+                id: 4,
+                name: "Bajaj Headlight Assembly",
+                price: 120000,
+                description: "Complete headlight assembly for Bajaj models",
+                image: "https://images.unsplash.com/photo-1558981852-426c6c22a060?ixlib=rb-1.2.1&auto=format&fit=crop&w=1351&q=80"
+            }
+        ];
+
+        // DOM elements
+        const productsContainer = document.getElementById('products-container');
+        const adminLink = document.getElementById('admin-link');
+        const logoutBtn = document.getElementById('logout-btn');
+        const logoutLi = document.getElementById('logout-li');
+        const loginBtn = document.getElementById('login-btn');
+        const productForm = document.getElementById('product-form');
+        const pages = document.querySelectorAll('.page');
+        const navLinks = document.querySelectorAll('nav ul li a[data-page]');
+
+        // Initialize the page
+        function init() {
+            displayProducts();
+            setupEventListeners();
+            showPage('home');
+        }
+
+        // Display products
+        function displayProducts() {
+            productsContainer.innerHTML = '';
+            
+            if (products.length === 0) {
+                productsContainer.innerHTML = '<p style="grid-column: 1/-1; text-align: center; font-size: 1.2rem;">No products available yet. Please check back later.</p>';
+                return;
+            }
+            
+            products.forEach(product => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                productCard.innerHTML = `
+                    <div class="product-image">
+                        <img src="${product.image}" alt="${product.name}" loading="lazy">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">${product.name}</h3>
+                        <div class="product-price">${product.price.toLocaleString()} UGX</div>
+                        <p class="product-description">${product.description}</p>
+                        <a href="#" data-page="contacts" class="buy-btn">Buy Now</a>
+                    </div>
+                `;
+                productsContainer.appendChild(productCard);
+            });
+            
+            // Add event listeners to new buy buttons
+            document.querySelectorAll('.buy-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    showPage('contacts');
+                });
+            });
+        }
+
+        // Save products to localStorage
+        function saveProducts() {
+            localStorage.setItem('milly-products', JSON.stringify(products));
+        }
+
+        // Show specific page and hide others
+        function showPage(pageId) {
+            pages.forEach(page => {
+                page.classList.remove('active');
+                if (page.id === `${pageId}-page`) {
+                    page.classList.add('active');
+                }
+            });
+            
+            // Update active nav link
+            navLinks.forEach(link => {
+                if (link.getAttribute('data-page') === pageId) {
+                    link.style.backgroundColor = 'var(--primary-color)';
+                } else {
+                    link.style.backgroundColor = 'transparent';
+                }
+            });
+            
+            // Scroll to top
+            window.scrollTo(0, 0);
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Navigation links
+            navLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const page = link.getAttribute('data-page');
+                    showPage(page);
+                });
+            });
+            
+            // Admin login
+            adminLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage('admin-login');
+            });
+            
+            // Login button
+            loginBtn.addEventListener('click', () => {
+                const password = document.getElementById('admin-password').value;
+                if (password === 'A') {
+                    showPage('admin-panel');
+                    logoutLi.classList.remove('hidden');
+                } else {
+                    alert('Incorrect password!');
+                }
+            });
+            
+            // Logout button
+            logoutBtn.addEventListener('click', () => {
+                logoutLi.classList.add('hidden');
+                showPage('home');
+            });
+            
+            // Add new product
+            productForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const newProduct = {
+                    id: products.length > 0 ? Math.max(...products.map(p => p.id)) + 1 : 1,
+                    name: document.getElementById('product-name').value,
+                    price: parseInt(document.getElementById('product-price').value),
+                    description: document.getElementById('product-description').value,
+                    image: document.getElementById('product-image').value
+                };
+                
+                products.push(newProduct);
+                saveProducts();
+                displayProducts();
+                
+                // Reset form
+                productForm.reset();
+                
+                // Show success message
+                alert('Product added successfully!');
+                
+                // Optionally go to products page
+                showPage('products');
+            });
+        }
+
+        // Initialize the app
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
